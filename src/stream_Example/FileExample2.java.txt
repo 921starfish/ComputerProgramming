@@ -1,0 +1,30 @@
+5:package stream_Example;
+10:
+15:import java.io.BufferedReader;
+20:import java.io.BufferedWriter;
+25:import java.io.File;
+30:import java.io.FileReader;
+35:import java.io.FileWriter;
+40:
+45:public class FileExample2 {
+50:
+55:	public static void main(String[] args) throws Exception {
+60:
+65:		File file =
+70:				new File("src/stream_Example/FileExample2.java");
+75:		BufferedReader br = new BufferedReader(new FileReader(file));
+80:		File file2 =
+85:				new File("src/stream_Example/FileExample2.java.txt");
+90:		BufferedWriter bw = new BufferedWriter(new FileWriter(file2));
+95:
+100:		String line;
+105:		int count = 0;
+110:		while ((line = br.readLine()) != null) {
+115:			count += 5;
+120:			bw.write(String.valueOf(count) + ":" + line);
+125:			bw.newLine();
+130:		}
+135:		br.close();
+140:		bw.close();
+145:	}
+150:}
