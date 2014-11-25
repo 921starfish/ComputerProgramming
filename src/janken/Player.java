@@ -19,15 +19,15 @@ class Player {
 
 	Choice showHand() {
 		Choice hand = new Choice();
-		switch( (int)(Math.random() * 3) ) {
+		switch ((int) (Math.random() * 3)) {
 		case 0:
-			hand.setChoice( Choice.STONE );
+			hand.setChoice(Choice.STONE);
 			break;
 		case 1:
-			hand.setChoice( Choice.SCISSORS );
+			hand.setChoice(Choice.SCISSORS);
 			break;
 		case 2:
-			hand.setChoice( Choice.PAPER );
+			hand.setChoice(Choice.PAPER);
 			break;
 		}
 		return hand;

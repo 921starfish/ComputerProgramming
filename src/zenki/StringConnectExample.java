@@ -10,7 +10,7 @@ public class StringConnectExample {
 		s += 10;
 		System.out.println("s = " + s);
 		System.out.println("s = " + s + 20);
-		System.out.println("s = " + s + (10+20));
+		System.out.println("s = " + s + (10 + 20));
 		System.out.println(10 + 20 + s);
 	}
 }

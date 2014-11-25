@@ -15,7 +15,7 @@ public class DogExample01 {
 		pochi.print();
 		DogFood food = new DogFood();
 		food.name = "高級ドッグフード";
-		pochi.eat( food );
+		pochi.eat(food);
 		Dog kuro = new Dog();
 		kuro.name = "くろ";
 		kuro.kind = "プードル";
@@ -24,9 +24,9 @@ public class DogExample01 {
 		kuro.print();
 		DogFood meat = new DogFood();
 		meat.name = "牛肉";
-		kuro.eat( meat );
-		kuro.eat( food );
-		taro.call( pochi );
-		taro.call( kuro );
+		kuro.eat(meat);
+		kuro.eat(food);
+		taro.call(pochi);
+		taro.call(kuro);
 	}
 }

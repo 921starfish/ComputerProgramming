@@ -11,7 +11,7 @@ public class MyMethods {
 		return false;
 	}
 
-	static boolean binarySearch(int[] data, int value){ // 二分探索(Binary Search)
+	static boolean binarySearch(int[] data, int value) { // 二分探索(Binary Search)
 		java.util.Arrays.sort(data); // 本来は既に昇順の配列を引数に
 		int left = 0;
 		int right = data.length - 1;

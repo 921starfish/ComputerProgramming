@@ -72,12 +72,12 @@ public class SimpleJanken {
 		}
 
 		// ３回戦の最終集計を行う
-		System.out.print(player1WinCount + "対" + player2WinCount+"で、");
-		if(player1WinCount > player2WinCount){
+		System.out.print(player1WinCount + "対" + player2WinCount + "で、");
+		if (player1WinCount > player2WinCount) {
 			System.out.println("プレイヤ１の勝ちです");
-		}else if(player1WinCount < player2WinCount){
+		} else if (player1WinCount < player2WinCount) {
 			System.out.println("プレイヤ２の勝ちです");
-		}else{
+		} else {
 			System.out.println("引き分けです");
 		}
 		// じゃんけんの終了を表示

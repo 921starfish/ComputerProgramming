@@ -16,7 +16,7 @@ public class ComplexExample {
 		Complex z = x.multiply(y);
 		System.out.println("x*y=" + z.toString());
 
-		Complex w = Complex.add(x,y);
+		Complex w = Complex.add(x, y);
 		System.out.println("x*y=" + w.toString());
 	}
 

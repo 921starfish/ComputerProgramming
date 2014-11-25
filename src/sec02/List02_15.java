@@ -10,7 +10,7 @@ public class List02_15 {
 		String name = scanner.nextLine();
 		System.out.println("あなたの年齢を入力してください。");
 		int age = scanner.nextInt();
-		System.out.println("ようこそ、"+age+"歳の "+name+" さん");
+		System.out.println("ようこそ、" + age + "歳の " + name + " さん");
 		scanner.close();
 	}
 

@@ -9,20 +9,21 @@ class Choice {
 	void setChoice(int choice) {
 		this.choice = choice;
 	}
+
 	int getChoice() {
 		return this.choice;
 	}
+
 	public String toString() {
 		String hand = null;
-		if( choice == STONE ) {
+		if (choice == STONE) {
 			hand = "ぐー";
-		} else if( choice == SCISSORS ) {
+		} else if (choice == SCISSORS) {
 			hand = "ちょき";
-		} else if( choice == PAPER ) {
+		} else if (choice == PAPER) {
 			hand = "ぱー";
 		}
 		return hand;
 	}
-
 
 }

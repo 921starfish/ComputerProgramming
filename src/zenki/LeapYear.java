@@ -15,19 +15,19 @@ public class LeapYear {
 		scan.close();
 		boolean leap = false; //うるう年の時、trueになる
 
-		if(year %  4 == 0){
-			if(year % 100 == 0){
-				if(year % 400 == 0){
+		if (year % 4 == 0) {
+			if (year % 100 == 0) {
+				if (year % 400 == 0) {
 					leap = true;
 				}
-			}else{
+			} else {
 				leap = true;
 			}
 		}
 
-		if(leap){//if(leap == true)としてもよい
+		if (leap) {//if(leap == true)としてもよい
 			System.out.println("その年はうるう年です");
-		}else{
+		} else {
 			System.out.println("その年は平年です");
 		}
 	}

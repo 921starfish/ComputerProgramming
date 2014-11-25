@@ -6,7 +6,7 @@ public class Example2_6 {
 		char c = 'a';
 		c++;
 		int b = c;
-		System.out.println("c="+c+",b="+b);
+		System.out.println("c=" + c + ",b=" + b);
 	}
 
 }

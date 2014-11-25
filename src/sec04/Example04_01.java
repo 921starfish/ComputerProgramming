@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class Example04_01 {
 
 	public static void main(String[] args) {
-		int[] month = {31,28,31,30,31,30,31,31,30,31,30,31};
-		String[] smonth = {"Sun","Mon","Tue","Wed","Thr","Fri","Sat"};
-
+		int[] month = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		String[] smonth = { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
 
 		Scanner scan = new Scanner(System.in);
 
@@ -18,11 +17,11 @@ public class Example04_01 {
 		scan.close();
 
 		int sum = 0;
-		for(int i = 0; i < m - 1; i++){
+		for (int i = 0; i < m - 1; i++) {
 			sum += month[i];
 		}
-		sum += d-1;
+		sum += d - 1;
 
-		System.out.println(m + "月" + d + "日は" + smonth[sum%7] + "です");
+		System.out.println(m + "月" + d + "日は" + smonth[sum % 7] + "です");
 	}
 }
