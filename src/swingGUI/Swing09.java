@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 public class Swing09 {
 
 	public static void main(String[] args) {
-		MyFrame09 frame = new MyFrame09("テキストをファイルにセーブ", "text.txt");
+		MyFrame09 frame = new MyFrame09("テキストをファイルにセーブ", "src/swingGUI/text.txt");
 		frame.setVisible(true);
 	}
 }
