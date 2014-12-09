@@ -83,7 +83,7 @@ class OseroFrame extends JFrame implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent event) {
+	public  void actionPerformed(ActionEvent event) {
 		if (((JButton) event.getSource()).equals(passButton)) {
 			nextDice *= -1;
 			message.setText("あと" + remains + "。次は" + ((nextDice == 1) ? "白" : "黒") + "です。");
