@@ -173,6 +173,28 @@ class MuseumFrame extends JFrame implements ActionListener {
 
 		// この中身を授業中に作成する
 
+		MyButton button = getLocation(e);
+
+		if(button.isWall()){// クリックされたボタンが壁ならばパス
+			return;
+		}else if(button.getBackground().equals(brightColor)){
+			// クリックされたボタンがすでに明るい場合はパス
+			return;
+		}else if(button.getBackground().equals(lampColor)){
+			// クリックされたボタンがランプならランプを削除する
+			button.setText(negativeMark);// ランプ削除マークを書き込む
+			lampDelete(button);// ランプ情報の配列lampから情報を削除
+		}else if(button.getText().equals(negativeMark)){
+			// クリックされたボタンがランプ削除マークがある場合
+			button.setText("");// ランプ削除マークを消す
+		}else{// それ以外はランプを置く
+			lamp[lampCount++] = button;//ランプ情報の配列lampに情報を書き込む
+		}
+
+		message.setText("");//メッセージ欄のテキストを削除
+		rewrite();// 窓内のボタンをすべて表示しなおす
+		check();// ゲームが終了したかをチェックをする
+
 	}
 
 	// 窓内のボタンを全て表示し直す
