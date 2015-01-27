@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -54,7 +56,7 @@ class MuseumFrame extends JFrame implements ActionListener {
 	final Color wallColor = Color.black; // 壁の色
 	final Color wallFontColor = Color.white; // 壁に書かれる文字の色
 	final Color lampColor = Color.yellow; // 明るくなった通路に塗る色
-	final Color brightColor = Color.green; // ランプを置いた場所に塗る色
+	/*final*/ Color brightColor = Color.green; // ランプを置いた場所に塗る色
 	final Font messageFont = new Font(Font.SANS_SERIF, Font.BOLD, 36); //メッセージ欄に書く文字の種類
 	final Font dialogFont = new Font(Font.SANS_SERIF, Font.BOLD, 24); // ダイアログに書く文字の種類
 	Font buttonFont = null; // ボタンに書く文字の種類：ボタンの大きさを読み込んだ時点 getFileData() で自動設定
@@ -70,6 +72,8 @@ class MuseumFrame extends JFrame implements ActionListener {
 	JPanel puzzlePanel; // コンテナ・パネル（button を GridLayout で並べる）
 	MyButton[][] button; // クリックするボタンたち
 	MyButton[] lamp; // 置かれたランプの情報を管理する配列
+
+	Timer timer;
 
 	MuseumFrame(String dataFileName) {
 
@@ -133,6 +137,12 @@ class MuseumFrame extends JFrame implements ActionListener {
 		}
 		// ランプ情報用の配列設定
 		lamp = new MyButton[height * width];
+
+		//タイマークラスのインスタンスを作成
+		timer = new Timer();
+
+		//タイマーの処理内容として、MyTimerTaskクラスを設定。呼び出し間隔は0.5秒に設定。
+		timer.schedule(new MyTimerTask(),0,500);
 	}
 
 	// データファイルからのデータ読み込み
@@ -301,6 +311,23 @@ class MuseumFrame extends JFrame implements ActionListener {
 		setVisible(false); // 一度、窓を非表示に戻す
 		// 補正データを加えて窓の大きさを決める
 		this.setSize(width + inst.left + inst.right, height + inst.top + inst.bottom);
+	}
+
+	class MyTimerTask extends TimerTask
+	{
+		//タイマー割り込みによる処理内容を記述
+		public void run()
+		{
+			if(brightColor ==Color.green){
+				brightColor = Color.white;
+				rewrite();
+				return;
+			}else if(brightColor == Color.white){
+				brightColor = Color.green;
+				rewrite();
+				return;
+			}
+		}
 	}
 }
 
