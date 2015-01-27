@@ -141,8 +141,8 @@ class MuseumFrame extends JFrame implements ActionListener {
 		//タイマークラスのインスタンスを作成
 		timer = new Timer();
 
-		//タイマーの処理内容として、MyTimerTaskクラスを設定。呼び出し間隔は0.5秒に設定。
-		timer.schedule(new MyTimerTask(),0,500);
+		//タイマーの処理内容として、MyTimerTaskクラスを設定。呼び出し間隔は1.5秒に設定。
+		timer.schedule(new MyTimerTask(),0,1500);
 	}
 
 	// データファイルからのデータ読み込み
@@ -319,10 +319,10 @@ class MuseumFrame extends JFrame implements ActionListener {
 		public void run()
 		{
 			if(brightColor ==Color.green){
-				brightColor = Color.white;
+				brightColor = Color.cyan;
 				rewrite();
 				return;
-			}else if(brightColor == Color.white){
+			}else if(brightColor == Color.cyan){
 				brightColor = Color.green;
 				rewrite();
 				return;
