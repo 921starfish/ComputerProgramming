@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,6 +37,7 @@ import javax.swing.UIManager;
  * 　　第４レコード以降のレコードの数は事前に読み込んでいないので、無駄な空行は入れないこと
  */
 public class MuseumPuzzle {
+
 	public static void main(String[] args) {
 		// データファイル名を与えて美術館パズルを実行する
 		MuseumFrame frame = new MuseumFrame("src/game/museum02.txt");
@@ -60,6 +62,8 @@ class MuseumFrame extends JFrame implements ActionListener {
 	final Font messageFont = new Font(Font.SANS_SERIF, Font.BOLD, 36); //メッセージ欄に書く文字の種類
 	final Font dialogFont = new Font(Font.SANS_SERIF, Font.BOLD, 24); // ダイアログに書く文字の種類
 	Font buttonFont = null; // ボタンに書く文字の種類：ボタンの大きさを読み込んだ時点 getFileData() で自動設定
+
+	private final ImageIcon light = new ImageIcon("src/game/電球.jpg");
 
 	final int messageHeight = 100; // メッセージ用 JLabel の表示高
 	final String negativeMark = "x"; // ランプを消した際の削除マーク（ランプを置けない場所のマーキングにも使用）
@@ -193,12 +197,15 @@ class MuseumFrame extends JFrame implements ActionListener {
 		}else if(button.getBackground().equals(lampColor)){
 			// クリックされたボタンがランプならランプを削除する
 			button.setText(negativeMark);// ランプ削除マークを書き込む
+			button.setIcon(null);
 			lampDelete(button);// ランプ情報の配列lampから情報を削除
 		}else if(button.getText().equals(negativeMark)){
 			// クリックされたボタンがランプ削除マークがある場合
 			button.setText("");// ランプ削除マークを消す
 		}else{// それ以外はランプを置く
 			lamp[lampCount++] = button;//ランプ情報の配列lampに情報を書き込む
+			button.setIcon(light);
+
 		}
 
 		message.setText("");//メッセージ欄のテキストを削除
