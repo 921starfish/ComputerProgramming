@@ -63,7 +63,7 @@ class MuseumFrame extends JFrame implements ActionListener {
 	final Font dialogFont = new Font(Font.SANS_SERIF, Font.BOLD, 24); // ダイアログに書く文字の種類
 	Font buttonFont = null; // ボタンに書く文字の種類：ボタンの大きさを読み込んだ時点 getFileData() で自動設定
 
-	private final ImageIcon light = new ImageIcon("src/game/電球.jpg");
+	private final ImageIcon light = new ImageIcon("src/game/light.jpg");
 
 	final int messageHeight = 100; // メッセージ用 JLabel の表示高
 	final String negativeMark = "x"; // ランプを消した際の削除マーク（ランプを置けない場所のマーキングにも使用）
